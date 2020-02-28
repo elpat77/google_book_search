@@ -1,0 +1,24 @@
+.navigation {
+    display:flex;
+    justify-content: space-around;
+    height: 10vh;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.nav_links {
+    display: flex;
+    align-items: center;
+}
+
+.link:not(:last-child) {
+margin-right: 20px;
+}
+
+.link:hover{
+    cursor:pointer;
+    
+}
