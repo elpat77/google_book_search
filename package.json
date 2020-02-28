@@ -17,8 +17,16 @@
   "dependencies": {
     "concurrently": "^5.1.0",
     "express": "^4.17.1",
-    "mongoose": "^5.8.11",
+    "mongoose": "^5.9.2",
     "morgan": "^1.9.1"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elpat77/full-stack-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/elpat77/full-stack-template/issues"
+  },
+  "homepage": "https://github.com/elpat77/full-stack-template#readme"
 }

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const TodoSchema = new Schema({
+const BookSchema = new Schema({
   text: {
     type: String,
     trim: true,
@@ -13,6 +13,6 @@ const TodoSchema = new Schema({
   }
 });
 
-const Todo = mongoose.model("Todo", TodoSchema);
+const Book = mongoose.model("Book", BookSchema);
 
-module.exports = Todo;
+module.exports = Book;
