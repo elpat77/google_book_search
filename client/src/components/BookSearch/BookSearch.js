@@ -1,7 +1,7 @@
 import React from "react";
 
-function TodoList(props) {
+function BookSearch(props) {
   return <div>{props.children}</div>;
 }
 
-export default TodoList;
+export default BookSearch;
