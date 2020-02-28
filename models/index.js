@@ -1,3 +1,3 @@
 module.exports = {
-  Todo: require("./Book")
+  Book: require("./Book")
 };

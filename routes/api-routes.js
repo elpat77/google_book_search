@@ -17,7 +17,7 @@ router.post("/api/books", (req, res) => {
     authors: req.body.authors,
     description: req.body.descrition,
     image: req.body.image,
-    link: link.body.link,
+    link: req.body.link,
     id: req.body.id
   }).then(
     newBook => {
@@ -35,20 +35,20 @@ router.get("/api/books/:id", (req, res) => {
 });
 
 
-// `/api/books/update` (patch) - Will be used to update a book, returned as JSON.
-router.patch("/api/books/update", (req, res) => {
+// `/api/books/update` (patch) - Will be used to update a book title, returned as JSON.
+router.patch("/api/books/updateTitle", (req, res) => {
   db.Book.findOneAndUpdate(
     { _id: req.query.id },
-    { title: req.query.title }
+    { title: req.query.title },
   ).then(updatedBook => {
-    res.json({ message: "success", todo: updatedBook });
+    res.json({ message: "success", book: updatedBook });
   });
 });
 
 // `/api/books/:id` (delete) - Will be used to delete a book from the database by Mongo `_id`.
 router.delete("/api/books/:id", (req, res) => {
   db.Book.deleteOne({ _id: req.params.id }).then(() => {
-    res.json("success");
+    res.json("You have successfully deleted the book");
   });
 });
 

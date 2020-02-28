@@ -8,7 +8,7 @@ const colors = require("colors");
 const mongoose = require("mongoose");
 const connection = mongoose.connection;
 const MONGO_URI =
-  process.env.MONGODB_URI || "mongodb://localhost/googlebooks";
+  process.env.MONGODB_URI || "mongodb://localhost/googlebooks"
 
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,

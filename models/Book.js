@@ -17,10 +17,10 @@ const BookSchema = new Schema({
     type: String,
   },
   image: {
-    type: mongoose.SchemaTypes.Url
+    type: String,
   },
   link: {
-    type: mongoose.SchemaTypes.Url
+    type: String,
   }
 });
 
