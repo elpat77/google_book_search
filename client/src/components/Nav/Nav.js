@@ -6,15 +6,15 @@ function Nav() {
     return (
         <nav className="navigation">
             <div className="logo">
-                <h3>Google Book Search</h3>
+                <div>Google Book Search</div>
             </div>
 
             <div className="nav_links">
                 <Link to="/" className="link">Book Search</Link>
                 <Link to="/saved" className="link">Saved Books</Link>
             </div>
-
         </nav>
+
     );
 };
 

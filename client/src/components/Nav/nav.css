@@ -1,12 +1,17 @@
 .navigation {
     display:flex;
     justify-content: space-around;
-    height: 10vh;
+    height: 20vh;
+    background-color: #0099CC;
+    margin-bottom: 20px;
 }
 
 .logo {
     display: flex;
     align-items: center;
+    color: #003399;
+    font-size: 45px;
+    font-weight: 700;
 }
 
 .nav_links {
@@ -14,11 +19,16 @@
     align-items: center;
 }
 
+.link {
+    font-size: 25px;
+    color: #ccffcc;
+}
+
 .link:not(:last-child) {
-margin-right: 20px;
+margin-right: 30px;
 }
 
 .link:hover{
-    cursor:pointer;
-    
+    cursor:pointer;  
 }
+
