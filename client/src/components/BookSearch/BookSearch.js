@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 import './booksearch.css';
 
 function BookSearch(props) {
@@ -21,17 +21,39 @@ function BookSearch(props) {
     console.log(counter);
   }, [counter]);
 
-  function addOne() {
-    changeCounter(counter + 1);
+  // function addOne() {
+  //   changeCounter(counter + 1);
+  // }
+
+  function getBooks() {
+    let url = `https://www.googleapis.com/books/v1/volumes?q=quilting`
+
+    axios.get(url).then(result => {
+      const data = result.data.items;
+      console.log('data', data)
+      console.log(data[1].volumeInfo.title)
+
+      for (let i = 0; i < data.length; i++) {
+        let bookTitles = data[i].volumeInfo.title;
+        console.log(bookTitles);
+      }
+    })
   }
 
   return (
-    <div className="bookSearch">
-      <h1>Hello from Book Search</h1>
-      <button onClick={() => addOne()}>Click Me</button>
-
+    <div>
+      <div className="bookSearch">
+        <h1>Type in a book name:</h1>
+        <div><input type="text" id="bookInput"></input></div>
+        <br></br>
+        <button className="btn btn-lg btn-primary" id="searchBooks" onClick={() => getBooks()}><i class="fa fa-search"></i> Show me the book</button>
+      </div>
+      <div className="container justify-content-center col-md-10 bookDisplay">
+        <h1> the list of books will display here</h1>
+      </div>
     </div>
   )
 }
+
 
 export default BookSearch;
