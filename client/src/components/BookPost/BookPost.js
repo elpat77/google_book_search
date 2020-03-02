@@ -2,12 +2,21 @@ import React from 'react';
 import axios from 'axios';
 
 
-function BookList(props) {
-    const list = props.
+function BookList(result) {
 
-        return(
-            <div>Hello from booklist</div>
-        )
+    axios.post('/api/books', {
+        title: result.title,
+        authors: result.authors,
+        description: result.description,
+        image: result.image,
+        link: result.link,
+        id: result.id
+
+    })
+
+    return (
+        <div>Hello from booklist</div>
+    )
 }
 
 
