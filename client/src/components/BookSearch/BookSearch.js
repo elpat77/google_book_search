@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './booksearch.css';
-import BookList from '../BookPost/BookPost'
+import BookList from '../BookList/BookList'
 
-function BookSearch() {
+function BookSearch(props) {
   const [input, setInput] = useState('');
+
   let book = []
 
   function getBooks() {
@@ -13,6 +14,7 @@ function BookSearch() {
     axios.get(url).then(result => {
       const data = result.data.items;
       console.log('data', data)
+      console.log('input', input)
 
       for (let i = 0; i < data.length; i++) {
         let bookTitles = data[i].volumeInfo.title;
@@ -31,15 +33,36 @@ function BookSearch() {
         // console.log(id);
       }
     })
+
+    axios.post('/api/books', {
+      title: props.title,
+      authors: props.authors,
+      description: props.description,
+      image: props.image,
+      link: props.link,
+      id: props.id
+
+    })
+
   }
+
 
   return (
     <div>
       <div className="bookSearch">
         <h1>Type in a book name:</h1>
-        <div><input value={input} id="bookInput" onInput={e => setInput(e.target.value)} /></div>
+        <div>
+          <input
+            value={input}
+            id="bookInput"
+            onInput={e => setInput(e.target.value)} />
+        </div>
         <br></br>
-        <button className="btn btn-lg btn-primary" id="searchBooks" onClick={() => getBooks()}><i class="fa fa-search"></i> Show me the book</button>
+        <button
+          className="btn btn-lg btn-primary"
+          id="searchBooks"
+          onClick={() => getBooks()}>
+          <i class="fa fa-search"></i> Show me the book</button>
       </div>
       <div className="container justify-content-center col-md-10 bookDisplay">
 
@@ -53,6 +76,5 @@ function BookSearch() {
     </div>
   )
 }
-
 
 export default BookSearch;
