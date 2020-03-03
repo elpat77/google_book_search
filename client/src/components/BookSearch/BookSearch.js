@@ -41,7 +41,8 @@ function BookSearch() {
   return (
     <div>
       <div className="bookSearch">
-        <h1>Type in a book name:</h1>
+        <h1>Search for any book :</h1>
+        <h2>Can enter keywords such as: Title, Author, Subject</h2>
         <div>
           <input
             className="col-5"
@@ -55,16 +56,10 @@ function BookSearch() {
           className="btn btn-lg btn-primary"
           id="searchBooks"
           onClick={(e) => { e.preventDefault(); getBooks() }}>
-          <i className="fa fa-search"></i> Show me the book</button>
+          <i className="fa fa-search"></i> Show me the books</button>
       </div>
-      <div className="container justify-content-center col-md-10 bookDisplay">
-
-        <div className="card text-center">
-          <div className="card-header">
-            <h1 className="card-title" id="bookDisplay">The books are:</h1>
-          </div>
-          <BookList books={bookList.book} />
-        </div>
+      <div className="container justify-content-center col-md-8 bookDisplay">
+        <BookList books={bookList.book} />
       </div>
     </div>
   )

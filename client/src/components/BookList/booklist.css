@@ -1,0 +1,29 @@
+.thumbnail {
+    size: 20px
+}
+.card{
+    margin-bottom: 15px;
+}
+
+.bookTitle{
+    color: #003399;
+    font-size: 30px;
+}
+
+.bookCards{
+    border-width: thick ;
+    border-style: solid;
+    border-color:#0099CC;
+}
+
+.authors {
+    color: #0099CC;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.description {
+    padding: 30px;
+    background-color: #0099CC;
+    font-size: 20px;
+}

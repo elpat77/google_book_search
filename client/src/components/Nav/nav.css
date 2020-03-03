@@ -1,9 +1,8 @@
 .navigation {
     display:flex;
     justify-content: space-around;
-    height: 20vh;
+    height: 10vh;
     background-color: #0099CC;
-    margin-bottom: 20px;
 }
 
 .logo {
