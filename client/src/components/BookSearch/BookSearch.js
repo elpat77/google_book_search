@@ -5,12 +5,12 @@ import BookList from '../BookList/BookList'
 
 function BookSearch() {
   const [input, setInput] = useState({ input: '' });
+  const [bookList, setlist] = useState({ book: [] });
 
-  let book = []
 
   function getBooks() {
     let url = `https://www.googleapis.com/books/v1/volumes?q=${input.input}`
-
+    let book = [];
     axios.get(url).then(result => {
       const data = result.data.items;
       console.log('data', data)
@@ -23,7 +23,7 @@ function BookSearch() {
         let image = data[i].volumeInfo.imageLinks.thumbnail;
         let link = data[i].volumeInfo.previewLink;
         let id = data[i].id;
-        book.push(bookTitles, authors, description, image, link, id)
+        book.push({ bookTitles, authors, description, image, link, id })
         // console.log(book);
 
         // console.log(authors);
@@ -32,6 +32,7 @@ function BookSearch() {
         // console.log(link);
         // console.log(id);
       }
+      setlist({ book: book })
     })
 
   }
@@ -62,7 +63,7 @@ function BookSearch() {
           <div className="card-header">
             <h1 className="card-title" id="bookDisplay">The books are:</h1>
           </div>
-          <BookList />
+          <BookList books={bookList.book} />
         </div>
       </div>
     </div>
