@@ -1,0 +1,49 @@
+import React from 'react';
+import axios from 'axios';
+
+function BookList(props) {
+    const list = props.data;
+    console.log("list", list)
+
+    function store(result) {
+
+        axios.post('/api/books', {
+            title: result.title,
+            authors: result.authors,
+            description: result.description,
+            image: result.image,
+            link: result.link,
+            id: result.id
+        }).then(results => {
+            console.log(results)
+        }
+
+        )
+    }
+
+    return (
+        <div>
+            {list}
+            <div className="card">
+                <div>Hello from booklist</div>
+                <div className="card-body text-center">
+                    <h5 className="card-input"></h5>
+                    <div className="text-center">
+                        <button
+                            onClick={() => store()}
+                            className="btn btn-outline-danger m-2"
+                            style={{ width: "200px" }}
+                        >
+                            Delete
+          </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    )
+}
+
+
+
+export default BookList;

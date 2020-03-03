@@ -3,13 +3,13 @@ import axios from 'axios';
 import './booksearch.css';
 import BookList from '../BookList/BookList'
 
-function BookSearch(props) {
-  const [input, setInput] = useState('');
+function BookSearch() {
+  const [input, setInput] = useState({ input: '' });
 
   let book = []
 
   function getBooks() {
-    let url = `https://www.googleapis.com/books/v1/volumes?q=${input}`
+    let url = `https://www.googleapis.com/books/v1/volumes?q=${input.input}`
 
     axios.get(url).then(result => {
       const data = result.data.items;
@@ -24,7 +24,7 @@ function BookSearch(props) {
         let link = data[i].volumeInfo.previewLink;
         let id = data[i].id;
         book.push(bookTitles, authors, description, image, link, id)
-        console.log(book);
+        // console.log(book);
 
         // console.log(authors);
         // console.log(description);
@@ -32,16 +32,6 @@ function BookSearch(props) {
         // console.log(link);
         // console.log(id);
       }
-    })
-
-    axios.post('/api/books', {
-      title: props.title,
-      authors: props.authors,
-      description: props.description,
-      image: props.image,
-      link: props.link,
-      id: props.id
-
     })
 
   }
@@ -53,22 +43,24 @@ function BookSearch(props) {
         <h1>Type in a book name:</h1>
         <div>
           <input
-            value={input}
+            className="col-5"
+            type="text"
+            value={input.input}
             id="bookInput"
-            onInput={e => setInput(e.target.value)} />
+            onChange={e => setInput({ input: e.target.value })} />
         </div>
         <br></br>
         <button
           className="btn btn-lg btn-primary"
           id="searchBooks"
-          onClick={() => getBooks()}>
-          <i class="fa fa-search"></i> Show me the book</button>
+          onClick={(e) => { e.preventDefault(); getBooks() }}>
+          <i className="fa fa-search"></i> Show me the book</button>
       </div>
       <div className="container justify-content-center col-md-10 bookDisplay">
 
-        <div class="card text-center">
-          <div class="card-header">
-            <h1 class="card-title" id="bookDisplay">The books are:</h1>
+        <div className="card text-center">
+          <div className="card-header">
+            <h1 className="card-title" id="bookDisplay">The books are:</h1>
           </div>
           <BookList />
         </div>

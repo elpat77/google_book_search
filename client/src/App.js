@@ -9,9 +9,6 @@ import NAV from "./components/Nav/Nav"
 // import { Container } from "react-bootstrap";
 
 function App() {
-  // useEffect(() => {
-  //   axios.get("/all").then(response => console.log(response));
-  // }, []);
 
   return (
     <div className="App">
