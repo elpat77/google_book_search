@@ -1,17 +1,15 @@
 .bookSearch {
     color:#003399;
     text-align: center;
-    background-color: #ccffcc;
-    
-    padding-bottom: 15px;
+    background-color: #ccffcc; 
+    /* padding-bottom: 15px; */
     padding-top: 15px;
-    height: 15vh;
+    height: 28vh;
 }
 
 .bookDisplay {
     text-align: center;
     margin-top: 20px;
-  
 }
 
 .card-header{

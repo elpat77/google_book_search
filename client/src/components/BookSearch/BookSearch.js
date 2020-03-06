@@ -25,7 +25,6 @@ function BookSearch() {
         let id = data[i].id;
         book.push({ bookTitles, authors, description, image, link, id })
         // console.log(book);
-
         // console.log(authors);
         // console.log(description);
         // console.log(image);
@@ -41,7 +40,7 @@ function BookSearch() {
   return (
     <div>
       <div className="bookSearch">
-        <h1>Search for any book :</h1>
+        <h1>Search for any book</h1>
         <h2>Can enter keywords such as: Title, Author, Subject</h2>
         <div>
           <input

@@ -18,14 +18,12 @@ function BookList(props) {
                     <div className="card-body text-center">
                         <div className="text-center">
                             <div>
-
-                                <a href={item.link} className="btn btn-outline-primary m-2" target="_blank"><i class="fa fa-rocket"></i> Link to the book</a>
-
+                                <a href={item.link} className="btn btn-outline-primary m-2 bookLink" target="_blank"><i class="fa fa-rocket"></i> Link to the book</a>
                             </div>
                             <div>
                                 <button
-                                    className="btn btn-outline-primary m-2"
-                                ><i class="fa fa-list"></i> Save book to my list</button>
+                                    className="btn btn-outline-primary m-2 saveBook"
+                                ><i className="fa fa-list "></i> Save book to my list</button>
                             </div>
                         </div>
                     </div>

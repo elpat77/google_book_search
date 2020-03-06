@@ -12,7 +12,10 @@ function SavedBooks(props) {
 
     return (
         <div className="savedComponent">
-            <h1>Hello from saved books</h1>
+            <h1>Your saved books are:</h1>
+
+
+
         </div>
     )
 }
