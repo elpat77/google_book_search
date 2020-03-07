@@ -11,7 +11,7 @@ router.get("/api/books", (req, res) => {
 });
 
 //  `/api/books` (post) - Will be used to save a new book to the database.
-router.post("/api/books", (req, res) => {
+router.post("/api/save", (req, res) => {
   db.Book.create({
     title: req.body.title,
     authors: req.body.authors,
