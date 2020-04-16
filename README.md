@@ -2,12 +2,10 @@
 
 ### Overview
 
-This site was built using React components, helper/util functions, and React lifecycle methods to query and display books based on user searches. It was built using Node, Express and MongoDB where users can save books to review or purchase later.
+This site was built using React components, helper/util functions, and React lifecycle methods to query and display books based on user searches. It was built using Google Books API, Node, Express and MongoDB where users can save books to review or purchase later.
 
 
-### Instructions
-
-* This application contains two pages:
+### This application contains two pages:
 
   * [Search](Search.png) - User can search for books via the Google Books API and render them here. User has the option to "View" a book, bringing them to the book on Google Books, or "Save" a book, saving it to the Mongo database.
 
