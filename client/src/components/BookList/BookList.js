@@ -15,7 +15,7 @@ function BookList(props) {
             description: result.description,
             image: result.image,
             link: result.link,
-            id: result.id,
+            bookId: result.id,
         }).then(results => {
             alert('book saved');
         })
@@ -39,11 +39,7 @@ function BookList(props) {
                                 <a href={item.link} className="btn btn-outline-primary m-2 bookLink" target="_blank" rel="noopener noreferrer"><i className="fa fa-rocket"></i> Link to the book</a>
                             </div>
                             <div>
-                                <button onClick={(e) => { saveBook(item) }} className="btn btn-warning mt-3 ml-3" id={item.id} data={item}>Save</button>
-
-                                <button
-                                    className="btn btn-outline-primary m-2 saveBook"
-                                ><i className="fa fa-list "></i> Save book to my list</button>
+                                <button onClick={(e) => { saveBook(item) }} className="btn btn-outline-primary m-2 saveBook" id={item.id} data={item}><i className="fa fa-list "></i> Save book to my list</button>
                             </div>
                         </div>
                     </div>

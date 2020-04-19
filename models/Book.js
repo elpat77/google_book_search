@@ -21,6 +21,9 @@ const BookSchema = new Schema({
   },
   link: {
     type: String,
+  },
+  bookId: {
+    type: String
   }
 });
 
