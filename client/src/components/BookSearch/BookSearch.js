@@ -22,8 +22,8 @@ function BookSearch() {
         let description = data[i].volumeInfo.description;
         let image = data[i].volumeInfo.imageLinks.thumbnail;
         let link = data[i].volumeInfo.previewLink;
-        let id = data[i].id;
-        book.push({ bookTitles, authors, description, image, link, id })
+        let bookId = data[i].id;
+        book.push({ bookTitles, authors, description, image, link, bookId })
         // console.log(book);
         // console.log(authors);
         // console.log(description);

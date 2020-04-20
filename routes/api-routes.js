@@ -4,14 +4,14 @@ const db = require("../models");
 
 
 // `/api/books` (get) - Should return all saved books as JSON.
-router.get("/api/books", (req, res) => {
+router.get("/books", (req, res) => {
   db.Book.find().then(books => {
     res.json(books);
   });
 });
 
 //  `/api/books` (post) - Will be used to save a new book to the database.
-router.post("/api/save", (req, res) => {
+router.post("/save", (req, res) => {
   db.Book.create({
     title: req.body.title,
     authors: req.body.authors,
@@ -28,7 +28,7 @@ router.post("/api/save", (req, res) => {
 
 
 // `/api/books/:id` (get) - Will be used to search for a book by id, returned as JSON.
-router.get("/api/books/:id", (req, res) => {
+router.get("/books/:id", (req, res) => {
   db.Book.find({ _id: req.params.id }).then(foundBook => {
     res.json(foundBook);
   });
@@ -36,7 +36,7 @@ router.get("/api/books/:id", (req, res) => {
 
 
 // `/api/books/update` (patch) - Will be used to update a book title, returned as JSON.
-router.patch("/api/books/updateTitle", (req, res) => {
+router.patch("/books/updateTitle", (req, res) => {
   db.Book.findOneAndUpdate(
     { _id: req.query.id },
     { title: req.query.title },
@@ -46,7 +46,7 @@ router.patch("/api/books/updateTitle", (req, res) => {
 });
 
 // `/api/books/:id` (delete) - Will be used to delete a book from the database by Mongo `_id`.
-router.delete("/api/books/:id", (req, res) => {
+router.delete("/books/:id", (req, res) => {
   db.Book.deleteOne({ _id: req.params.id }).then(() => {
     res.json("You have successfully deleted the book");
   });
